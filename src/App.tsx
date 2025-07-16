@@ -8,6 +8,7 @@ import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import SignupFormDemo from "./components/signup-form-demo";
 import Footer from "./components/footer";
 import { Pricing } from "./components/pricing";
+import { HeroVideoDialogDemo } from "./components/media";
 const App = () => {
   const { theme } = useDarkMode();
 
@@ -80,6 +81,7 @@ const App = () => {
             />
           </WobbleCard>
         </div>
+        <HeroVideoDialogDemo />
         <div className="justify-items-center my-20">
           <Pricing />
         </div>
