@@ -4,6 +4,7 @@ import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
 // import Link from "next/link";
 // import { Link } from "react-router-dom";
 import React from "react";
+import { InstagramLogoIcon } from "@radix-ui/react-icons";
 
 import { ModeToggle } from "@/components/mode-toggle";
 import { buttonVariants } from "@/components/ui/button";
@@ -17,10 +18,11 @@ import {
 import { cn } from "@/lib/utils";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 
-export type IconProps = React.HTMLAttributes<SVGElement>;
+export type IconProps = Omit<React.HTMLAttributes<SVGElement>, "children">;
 
 const Icons = {
   calendar: (props: IconProps) => <CalendarIcon {...props} />,
+  instagram: (props: IconProps) => <InstagramLogoIcon {...props} />,
   email: (props: IconProps) => <MailIcon {...props} />,
   linkedin: (props: IconProps) => (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -66,7 +68,7 @@ const Icons = {
 const DATA = {
   navbar: [
     { href: "#", icon: HomeIcon, label: "Home" },
-    { href: "#", icon: PencilIcon, label: "Blog" },
+    { href: "#", icon: Icons.youtube, label: "Youtube" },
   ],
   contact: {
     social: {
@@ -76,9 +78,9 @@ const DATA = {
         icon: Icons.github,
       },
       LinkedIn: {
-        name: "LinkedIn",
+        name: "Instagram",
         url: "#",
-        icon: Icons.linkedin,
+        icon: Icons.instagram,
       },
       X: {
         name: "X",
